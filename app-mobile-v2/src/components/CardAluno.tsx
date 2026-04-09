@@ -45,6 +45,5 @@ const styles = StyleSheet.create({
   botaoTexto: {
     color: '#ffffff',
     fontWeight: '600',
-    textDecorationLine: 'none'
   },
 });

@@ -1,10 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export function Cabecalho() {
+type CardCabecalhoProps = {
+  titulo: string;
+  subtitulo: string;
+};
+
+export function CabecalhoAula({titulo, subtitulo}: CardCabecalhoProps) {
   return (
     <View style={styles.cabecalho}>
-      <Text style={styles.titulo}>Desenvolvimento Mobile</Text>
-      <Text style={styles.subtitulo}>Encontro 03</Text>
+      <Text style={styles.titulo}>{titulo}</Text>
+      <Text style={styles.subtitulo}>{subtitulo}</Text>
     </View>
   );
 }
