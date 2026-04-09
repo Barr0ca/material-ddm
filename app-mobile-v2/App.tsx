@@ -1,14 +1,21 @@
-import { StyleSheet, Text, View } from "react-native";
-import { Cabecalho } from "./src/components/Cabecalho";
-import { CardDisciplina } from "./src/components/CardDisciplina";
-import { Rodape } from "./src/components/Rodape";
+import { useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { CardAluno } from './src/components/CardAluno';
 
 export default function App() {
+  const [presente, setPresente] = useState(false);
+
+  function alternarPresenca() {
+    setPresente((valorAtual) => !valorAtual);
+  }
+
   return (
     <View style={styles.container}>
-      <Cabecalho />
-      <CardDisciplina />
-      <Rodape />
+      <CardAluno
+        nome="Aluno Exemplo"
+        presente={presente}
+        onAlternarPresenca={alternarPresenca}
+      />
     </View>
   );
 }
@@ -16,9 +23,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'center',
     padding: 20,
-    gap: 12,
-    justifyContent: "center",
-    backgroundColor: "#F5F7FA",
+    backgroundColor: '#f3f4f6',
   },
 });
