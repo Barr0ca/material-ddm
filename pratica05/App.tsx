@@ -1,15 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native';
-import CabecalhoTurma from './src/components/CabecalhoTurma';
-import ResumoAula from './src/components/ResumoAula';
-import ListaTarefas from './src/components/ListaTarefas';
+import { StyleSheet, View, ScrollView } from "react-native";
+import CabecalhoTurma from "./src/components/CabecalhoTurma";
+import ResumoAula from "./src/components/ResumoAula";
+import ListaTarefas from "./src/components/ListaTarefas";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <CabecalhoTurma />
-      <ResumoAula />
-      <ListaTarefas />
-    </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <CabecalhoTurma titulo="Prática 05" subtitulo="Stylesheet e CSS" />
+        <ResumoAula />
+        <ListaTarefas />
+      </View>
+    </ScrollView>
   );
 }
 
@@ -18,5 +20,6 @@ const styles = StyleSheet.create({
     flex: 1,
     gap: 12,
     alignItems: "center",
+    marginTop: 32,
   },
 });
