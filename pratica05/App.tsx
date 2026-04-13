@@ -1,11 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import CabecalhoTurma from './src/components/CabecalhoTurma';
+import ResumoAula from './src/components/ResumoAula';
+import ListaTarefas from './src/components/ListaTarefas';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <CabecalhoTurma />
+      <ResumoAula />
+      <ListaTarefas />
     </View>
   );
 }
@@ -13,8 +16,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    gap: 12,
+    alignItems: "center",
   },
 });
