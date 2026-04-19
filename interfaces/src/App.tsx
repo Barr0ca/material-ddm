@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     borderColor: "#dc2626",
   },
   textoErro: {
-    borderColor: "#dc2626",
+    color: "#dc2626",
     marginBottom: 2,
     fontSize: 12,
   },
