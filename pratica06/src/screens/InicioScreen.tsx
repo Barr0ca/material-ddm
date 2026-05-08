@@ -8,7 +8,7 @@ type Props = NativeStackScreenProps<RootStackParamList, "Inicio">;
 export function InicioScreen({ navigation }: Props) {
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Controle de Visitas</Text>
+      <Text style={styles.titulo}>Fluxo de Atendimento</Text>
       <Text style={styles.subtitulo}>
         Use o fluxo abaixo para abrir cadastro, confirmar envio e voltar ao
         início.
