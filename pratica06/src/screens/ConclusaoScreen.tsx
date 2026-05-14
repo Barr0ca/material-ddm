@@ -3,14 +3,14 @@ import { Pressable, Text, View } from "react-native";
 import type { RootStackParamList } from "../navigation/AppStack";
 import { styles } from "../styles";
 
-type Props = NativeStackScreenProps<RootStackParamList, "Confirmacao">;
+type Props = NativeStackScreenProps<RootStackParamList, "Conclusao">;
 
-export function ConfirmacaoScreen({ navigation }: Props) {
+export function ConclusaoScreen({ navigation }: Props) {
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Registro concluído</Text>
+      <Text style={styles.titulo}>Atendimento registrado</Text>
       <Text style={styles.subtitulo}>
-        A visita foi registrada com sucesso. Você pode retornar ao início para
+        O atendimento foi registrado com sucesso. Você pode retornar ao início para
         iniciar novo fluxo.
       </Text>
 

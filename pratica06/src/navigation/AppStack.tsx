@@ -1,13 +1,13 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { CadastroScreen } from "../screens/CadastroScreen";
-import { ConfirmacaoScreen } from "../screens/ConfirmacaoScreen";
+import { AtendimentoScreen } from "../screens/AtendimentoScreen";
+import { ConclusaoScreen } from "../screens/ConclusaoScreen";
 import { InicioScreen } from "../screens/InicioScreen";
 
 export type RootStackParamList = {
   Inicio: undefined;
-  Cadastro: undefined;
-  Confirmacao: undefined;
+  Atendimento: undefined;
+  Conclusao: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -30,13 +30,13 @@ export function AppStack() {
           options={{ title: "Painel inicial" }}
         />
         <Stack.Screen
-          name="Cadastro"
-          component={CadastroScreen}
+          name="Atendimento"
+          component={AtendimentoScreen}
           options={{ title: "Nova Visita" }}
         />
         <Stack.Screen
-          name="Confirmacao"
-          component={ConfirmacaoScreen}
+          name="Conclusao"
+          component={ConclusaoScreen}
           options={{ title: "Confirmação", headerBackVisible: false }}
         />
       </Stack.Navigator>

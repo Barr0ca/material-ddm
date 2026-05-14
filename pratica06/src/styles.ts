@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: '#cbd5e1',
+    borderColor: '#4e5258',
     borderRadius: 10,
     backgroundColor: '#ffffff',
     paddingHorizontal: 12,
@@ -47,5 +47,10 @@ export const styles = StyleSheet.create({
   botaoSecundarioTexto: {
     color: '#0f766e',
     fontWeight: '600',
+  },
+  error: {
+    color: 'red',
+    fontSize: 14,
+    marginTop: 4,
   },
 });

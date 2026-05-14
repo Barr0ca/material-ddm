@@ -10,25 +10,16 @@ export function InicioScreen({ navigation }: Props) {
     <View style={styles.container}>
       <Text style={styles.titulo}>Fluxo de Atendimento</Text>
       <Text style={styles.subtitulo}>
-        Use o fluxo abaixo para abrir cadastro, confirmar envio e voltar ao
-        início.
+        Use o fluxo abaixo para abrir um atendimento.
       </Text>
 
       <Pressable
         style={styles.botaoPrimario}
-        onPress={() => navigation.navigate("Cadastro")}
+        onPress={() => navigation.navigate("Atendimento")}
       >
-        <Text style={styles.botaoPrimarioTexto}>Ir para cadastro</Text>
+        <Text style={styles.botaoPrimarioTexto}>Ir para Atendimento</Text>
       </Pressable>
 
-      <Pressable
-        style={styles.botaoSecundario}
-        onPress={() => navigation.push("Cadastro")}
-      >
-        <Text style={styles.botaoSecundarioTexto}>
-          Empilhar outro cadastro (push)
-        </Text>
-      </Pressable>
     </View>
   );
 }
