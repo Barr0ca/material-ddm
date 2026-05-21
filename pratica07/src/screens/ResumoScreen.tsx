@@ -1,12 +1,12 @@
 import { Text, View } from 'react-native';
 import { styles } from '../styles';
 
-export function ConfiguracoesScreen() {
+export function ResumoScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Configurações</Text>
+      <Text style={styles.titulo}>Resumo</Text>
       <Text style={styles.subtitulo}>
-        Tela acessada pelo drawer para opções menos frequentes do app.
+        Nesta área você pode consolidar números e evolução semanal.
       </Text>
     </View>
   );

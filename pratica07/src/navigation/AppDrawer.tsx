@@ -1,10 +1,10 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { AppTabs } from './AppTabs';
-import { ConfiguracoesScreen } from '../screens/ConfiguracoesScreen';
+import Ionicons from "@react-native-vector-icons/ionicons";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { AppTabs } from "./AppTabs";
+import { ConfiguracoesScreen } from "../screens/ConfiguracoesScreen";
 
 export type RootDrawerParamList = {
-  PainelPrincipal: undefined;
+  PainelInicial: undefined;
   Configuracoes: undefined;
 };
 
@@ -13,18 +13,22 @@ const Drawer = createDrawerNavigator<RootDrawerParamList>();
 export function AppDrawer() {
   return (
     <Drawer.Navigator
-      initialRouteName="PainelPrincipal"
+      initialRouteName="PainelInicial"
       screenOptions={({ route }) => ({
-        headerStyle: { backgroundColor: '#0f172a' },
-        headerTintColor: '#f8fafc',
-        drawerActiveTintColor: '#0f766e',
-        drawerInactiveTintColor: '#334155',
+        headerStyle: { backgroundColor: "#635274" },
+        headerTintColor: "#e4f5b1",
+        drawerActiveTintColor: "#512b52",
+        drawerInactiveTintColor: "#512b52",
         drawerIcon: ({ focused, color, size }) => (
           <Ionicons
             name={
-              route.name === 'PainelPrincipal'
-                ? focused ? 'grid' : 'grid-outline'
-                : focused ? 'settings' : 'settings-outline'
+              route.name === "PainelInicial"
+                ? focused
+                  ? "grid"
+                  : "grid-outline"
+                : focused
+                  ? "settings"
+                  : "settings-outline"
             }
             color={color}
             size={size}
@@ -33,14 +37,14 @@ export function AppDrawer() {
       })}
     >
       <Drawer.Screen
-        name="PainelPrincipal"
+        name="PainelInicial"
         component={AppTabs}
-        options={{ title: 'Aplicativo', headerShown: false }}
+        options={{ title: "Aplicativo", headerShown: false }}
       />
       <Drawer.Screen
         name="Configuracoes"
         component={ConfiguracoesScreen}
-        options={{ title: 'Configurações' }}
+        options={{ title: "Configurações" }}
       />
     </Drawer.Navigator>
   );
