@@ -5,10 +5,11 @@ import { InicioScreen } from "../screens/InicioScreen";
 import { ResumoScreen } from "../screens/ResumoScreen";
 
 export type RootTabParamList = {
-  Inicio: undefined;
-  Tarefas: undefined;
+  Inicio: { tarefaId: string; prioridade?: 'baixa' | 'média' | 'alta' } | undefined;
+  Tarefas: { tarefaId: string; usuario: string } |  undefined;
   Resumo: undefined;
 };
+
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
