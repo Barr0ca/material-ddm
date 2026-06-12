@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { styles } from "./styles";
-import { Alert, View } from "react-native";
+import { Alert, FlatList, Pressable, Text, TextInput, View } from "react-native";
 
 type Rascunho = {
   id: string;
@@ -8,7 +8,7 @@ type Rascunho = {
 };
 
 export default function App() {
-  const [titule, setTitulo] = useState("");
+  const [titulo, setTitulo] = useState("");
   const [rascunhos, setRascunhos] = useState<Rascunho[]>([]);
 
   function adicionarRascunho() {
@@ -34,7 +34,42 @@ export default function App() {
     );
   }
 
-  return <View style={styles.container}>
-    
-  </View>;
+  return (
+    <View style={styles.container}>
+      <Text style={styles.titulo}>Rascunho de Atendimento</Text>
+      <Text style={styles.subtitulo}>Adicione itens e depois recarregue o aplicativo.</Text>
+      
+      <TextInput 
+        style={styles.input}
+        placeholder="Titulo do rascunho"
+        value={titulo}
+        onChangeText={setTitulo}
+      />
+
+      <Pressable style={styles.botao} onPress={adicionarRascunho}>
+        <Text style={styles.botaoTexto}>Adicionar Rascunho</Text>
+      </Pressable>
+
+      <Text style={styles.contador}>
+        {rascunhos.length} rascunho(s) somente em memória
+      </Text>
+
+      <FlatList
+        data={rascunhos}
+        keyExtractor={(item) => item.id}
+        ListEmptyComponent={
+          <Text style={styles.vazio}>Nenhum rascunho nesta execução.</Text>
+        }
+        renderItem={({ item }) => (
+          <View style={styles.item}>
+            <Text style={styles.itemTexto}>{item.titulo}</Text>
+
+            <Pressable onPress={() => removerRascunho(item.id)}>
+              <Text style={styles.removerTexto}>Remover</Text>
+            </Pressable>
+          </View>
+        )}
+      />
+    </View>
+  );
 }
