@@ -54,42 +54,42 @@ export const styles = StyleSheet.create({
   carregandoTexto: {
     color: "#475569",
   },
-  lista: {
+  listaPersonagens: {
     paddingTop: 20,
     paddingBottom: 32,
     gap: 12,
   },
-  listaVazia: {
+  listaPersonagensVazia: {
     marginTop: 32,
     textAlign: "center",
     color: "#64748b",
   },
-  card: {
+  cardPersonagem: {
     padding: 16,
     borderRadius: 8,
     backgroundColor: "#ffffff",
     borderWidth: 1,
     borderColor: "#e2e8f0",
   },
-  nome: {
+  nomePersonagem: {
     fontSize: 18,
     fontWeight: "700",
     color: "#0f172a",
   },
-  empresa: {
+  estadoPersonagem: {
     marginTop: 4,
     color: "#475569",
   },
-  linha: {
+  linhaAtributo: {
     marginTop: 12,
   },
-  rotulo: {
+  rotuloAtributo: {
     fontSize: 12,
     fontWeight: "700",
     color: "#64748b",
     textTransform: "uppercase",
   },
-  valor: {
+  valorAtributo: {
     marginTop: 2,
     color: "#1e293b",
   },

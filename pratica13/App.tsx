@@ -8,7 +8,7 @@ import {
   View,
 } from "react-native";
 import { styles } from "./styles";
-import { Personagem, listarPersonagens } from "./src/services/usuariosApi";
+import { Personagem, listarPersonagens } from "./src/services/personagensApi";
 
 export default function App() {
   const [personagens, setPersonagens] = useState<Personagem[]>([]);
@@ -42,7 +42,7 @@ export default function App() {
           <Text style={styles.subtitulo}>Dados remotos em JSON</Text>
         </View>
 
-        <Pressable
+        <Pressable // Botao para atualizar os dados da API
           style={styles.botaoAtualizar}
           onPress={carregarPersonagens}
           disabled={carregando}
@@ -63,40 +63,40 @@ export default function App() {
           <Text style={styles.carregandoTexto}>Buscando dados da API...</Text>
         </View>
       ) : (
-        <FlatList
+        <FlatList // Utilizando o FlatList para exibir a lista de personagens
           data={personagens}
           keyExtractor={(item) => String(item.id)}
-          contentContainerStyle={styles.lista}
+          contentContainerStyle={styles.listaPersonagens}
           ListEmptyComponent={
-            <Text style={styles.listaVazia}>Nenhum contato retornado.</Text>
+            <Text style={styles.listaPersonagensVazia}>Nenhum contato retornado.</Text>
           }
           renderItem={({ item }) => (
-            <View style={styles.card}>
-              <Text style={styles.nome}>{item.nome}</Text>
-              <Text style={styles.empresa}>{item.estado}</Text>
+            <View style={styles.cardPersonagem}>
+              <Text style={styles.nomePersonagem}>{item.nome}</Text>
+              <Text style={styles.estadoPersonagem}>{item.estado}</Text>
 
-              <View style={styles.linha}>
-                <Text style={styles.rotulo}>Espécie</Text>
-                <Text style={styles.valor}>{item.especie}</Text>
+              <View style={styles.linhaAtributo}>
+                <Text style={styles.rotuloAtributo}>Espécie</Text>
+                <Text style={styles.valorAtributo}>{item.especie}</Text>
               </View>
 
-              <View style={styles.linha}>
-                <Text style={styles.rotulo}>Gênero</Text>
-                <Text style={styles.valor}>{item.genero}</Text>
+              <View style={styles.linhaAtributo}>
+                <Text style={styles.rotuloAtributo}>Gênero</Text>
+                <Text style={styles.valorAtributo}>{item.genero}</Text>
               </View>
 
-              <View style={styles.linha}>
-                <Text style={styles.rotulo}>Origem</Text>
-                <Text style={styles.valor}>{item.origem}</Text>
+              <View style={styles.linhaAtributo}>
+                <Text style={styles.rotuloAtributo}>Origem</Text>
+                <Text style={styles.valorAtributo}>{item.origem}</Text>
               </View>
 
-              <View style={styles.linha}>
-                <Text style={styles.rotulo}>Localização</Text>
-                <Text style={styles.valor}>{item.localizacao}</Text>
+              <View style={styles.linhaAtributo}>
+                <Text style={styles.rotuloAtributo}>Localização</Text>
+                <Text style={styles.valorAtributo}>{item.localizacao}</Text>
               </View>
 
-              <View style={styles.linha}>
-                <Text style={styles.rotulo}>Imagem</Text>
+              <View style={styles.linhaAtributo}>
+                <Text style={styles.rotuloAtributo}>Imagem</Text>
                 <Image
                   style={{ width: 100, height: 100, resizeMode: "contain" }}
                   source={{ uri: item.imagem }}

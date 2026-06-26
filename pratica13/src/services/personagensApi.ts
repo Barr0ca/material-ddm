@@ -1,6 +1,6 @@
 const API_URL = "https://rickandmortyapi.com/api/character";
 
-export type Personagem = {
+export type Personagem = { // Tipo de dado do personagem utilizado na tela
   id: number;
   nome: string;
   estado: string;
@@ -11,7 +11,7 @@ export type Personagem = {
   imagem: string;
 };
 
-export type PersonagemApi = {
+export type PersonagemApi = { // Tipo de dado do personagem utilizado na API
   id: number;
   name: string;
   status: string;
@@ -30,7 +30,7 @@ type PersonagensRespostaApi = {
   results: PersonagemApi[];
 };
 
-function mapearPersonagem(personagem: PersonagemApi): Personagem {
+function mapearPersonagem(personagem: PersonagemApi): Personagem { // Função para mapear o personagem da API para o tipo de dado utilizado na tela
   return {
     id: personagem.id,
     nome: personagem.name,
@@ -44,9 +44,9 @@ function mapearPersonagem(personagem: PersonagemApi): Personagem {
 }
 
 export async function listarPersonagens() {
-  const resposta = await fetch(API_URL);
+  const resposta = await fetch(API_URL); // Faz a requisição à API com fetch
 
-  if (!resposta.ok) {
+  if (!resposta.ok) { // Verifica a resposta da API 
     throw new Error(`Error HTTP ${resposta.status}`);
   }
 
@@ -54,3 +54,7 @@ export async function listarPersonagens() {
 
   return dados.results.map(mapearPersonagem);
 }
+
+// Os dados que vem da API são: id, name, status, species, gender, origin, location e image 
+
+// O endpoint utilizado na atividade é: https://rickandmortyapi.com/api/character ele é o endpoint da API que retorna os dados dos personagens da serie Rick and Morty
